@@ -1,0 +1,18 @@
+@import '../../scss/mixins';
+
+.like{
+  align-self: flex-start;
+  justify-self: flex-start;
+  grid-area: like;
+  display: flex;
+  @include deskfirst(640){
+    align-self: center;
+  }
+  &__click{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

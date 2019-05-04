@@ -1,0 +1,15 @@
+@import '../../../scss/mixins';
+
+.comment{
+  &__list{
+    grid-area: comment-list;
+    flex-shrink: 0;
+    width: 50%;
+    margin: 0 rem(10px);
+    @include deskfirst(640){
+      width: 75%;
+      padding: 0;
+      order: 0;
+    }
+  }
+}

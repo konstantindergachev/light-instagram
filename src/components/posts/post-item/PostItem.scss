@@ -1,0 +1,55 @@
+@import '../../../scss/_mixins';
+@import '../../../scss/_variables';
+
+.post{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: flex-start;
+  &__wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: var(--box-shadow);
+    margin-bottom: rem(24px);
+    display: flex;
+    justify-content: space-between;
+    padding: rem(30px);
+    @include deskfirst(960){
+      margin: 0 rem(20px);
+    }
+    @include deskfirst(640){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__name{
+    align-self: flex-start;
+    justify-self: flex-start;
+    font-weight: 300;
+    @include deskfirst(640){
+      align-self: center;
+    }
+  }
+  &__img{
+    width: 100%;
+    &-wrap{
+      grid-area: img;
+      align-self: center;
+      justify-self: flex-start;
+      width: 100%;
+      @include deskfirst(640){
+        width: 75%;
+        // align-self: flex-start;
+      }
+    }
+  }
+  &__text{
+    text-align: justify;
+    text-indent: rem(15px);
+  }
+  a{
+    @include deskfirst(640){
+      align-self: center;
+    }
+  }
+}

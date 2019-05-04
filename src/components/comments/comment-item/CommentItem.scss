@@ -1,0 +1,43 @@
+@import '../../../scss/mixins';
+
+.comment__item{
+  box-shadow: var(--box-shadow);
+  padding: rem(10px);
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 2fr;
+  grid-template-areas:
+  "comment-user comment-text";
+  @include deskfirst(490){
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "comment-user"
+    "comment-text";
+  }
+  &:not(:last-child){
+    margin-bottom: 10px;
+  }
+}
+
+.comment__username{
+  grid-area: comment-user;
+  text-align-last: left;
+  font-style: italic;
+  @include deskfirst(490){
+  }
+}
+
+.comment__commenttext{
+  grid-area: comment-text;
+  text-indent: rem(15px);
+  text-align: justify;
+  @include deskfirst(490){
+    text-align: left;  
+    // align-self: flex-start;
+  }
+}
+
+.comment__date{
+  grid-area: comment-date;
+}

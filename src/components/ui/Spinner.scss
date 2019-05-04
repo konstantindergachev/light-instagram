@@ -1,0 +1,56 @@
+/*---------- 'Spinners' ----------*/
+.spinner {
+  border: 0.3rem solid var(--mainBlue);
+  border-top: 0.3rem solid #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.spinner__ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 5px solid var(--mainBlue);
+    border-color: var(--mainBlue) transparent var(--mainBlue) transparent;
+    animation: spinner__ring 1.2s linear infinite;
+  }
+  &-wrapper{
+    height: calc(100vh - (var(--footer-height) + var(--header-height)));
+  }
+}
+
+@keyframes spinner__ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

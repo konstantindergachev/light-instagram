@@ -1,26 +1,24 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Auth from './components/auth/Auth';
+import PageNotFound from './components/page-not-found/PageNotFound';
+import OnePost from './components/posts/one-post/OnePost';
+import PostList from './components/posts/post-list/PostList';
 import './App.scss';
-import logo from './logo.svg';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <Switch>
+          <Route exact path="/" component={Auth} />
+          <Route exact path="/posts" component={PostList} />
+          <Route exact path="/post/:id" component={OnePost} />
+          <Route render={(props) => <PageNotFound {...props} />} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
