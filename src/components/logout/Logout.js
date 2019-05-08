@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { logout } from '../../actions/logoutActions';
 import image from '../../img/sprite.svg';
+import { logout } from '../../redux/actions/logoutActions';
 import './Logout.scss';
 
 const Logout = ({ logout, history }) => (

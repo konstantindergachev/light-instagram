@@ -1,8 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
-import { getOnePost } from '../../../actions/postActions';
+import { getOnePost } from '../../../redux/actions/postActions';
 import Button from '../../button/Button';
 import Like from '../../like/Like';
 import './PostItem.scss';

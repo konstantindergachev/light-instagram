@@ -1,4 +1,4 @@
-import TYPES from '../actions/types';
+import TYPES from './types';
 
 //Logout action creator 
 export const logout = (history) => {
